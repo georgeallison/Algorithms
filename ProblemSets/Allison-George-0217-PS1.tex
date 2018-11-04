@@ -1,0 +1,100 @@
+\documentclass{article}
+\usepackage[a4paper, total={6in,8in}]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{listings}
+\author{Allison, George\\02/17}
+\title{CSCI 3104\\Spring 2018\\Problem Set 1}
+
+%name this file "Allison-George-0217-PS1.pdf"
+
+\begin{document}
+\maketitle
+1a) The relationship is true but is not very accurate. To prove the truth of the original relationship it is shown that $\lim_{n\to\infty}\frac{n+1}{n^4}$ does not approach infinity, it approaches zero. Therefore the asymptotic relationship $n+1 = O(n^4)$ is true.\\
+
+1b) False. $2^{2n}$ increases twice as quickly as $2^n$. This can be seen by re-writing the left side of the equation as $(2^n)^2$. $\lim_{n\to\infty} \frac{2^{2n}}{2^n} = \infty$ Therefore, a more accurate relationship would be $2^{2n} = \Omega(2^n)$.\\
+
+1c) True. The $+7$ is insignificant in this asymptotic relationship, so the two equations would grow at nearly the same rate. $\lim_{n\to\infty}\frac{2^n}{2^n*2^7} = \frac{1}{128}$ (not $0$ or $\infty$) which verifies the relationship.\\
+
+1d) False. 1 is an atomic operation, so the appropriate relationship would be $1 = \Omega(1/n)$.\\
+
+1e) True. $\lim_{n\to\infty}\frac{(\log_{e}n)^2}{(\log_{2}n)^2} = $a constant number, therefore the original relationship is valid.\\
+
+1f) False $n^2 + 2n - 4 = \Theta(n^2)$ because $\lim_{n\to\infty}\frac{ n^2+2n-4}{n^2} =$ a constant number.\\
+
+1g) False. $lim_{x\to\infty}\frac{3^{3n}}{9^n} = \infty$, therefore $3^{3n} = \Omega(9^n)$\\
+
+1h) False. $lim_{x\to\infty}\frac{2^{n+1}}{2^{nlog_{2}n}} = lim_{x\to\infty}2^{n-lg(n)(n)+1} = 0$, therefore $2^{n+1} = \Theta(2^{lg(n)})$\\
+
+1i) False. $\lim_{x\to\infty}\frac{\sqrt{n}}{lg(n)} = \infty$, so $\sqrt{n} = \Omega(lg(n))$\\
+
+1j) True. According to a RAM model of computation the procesing time for any one number is one time unit, so $10^{100} = \Theta(1)$\\
+
+2a) In the pseudocode there are two nested for loops, which makes the running time complexity $\Theta(n^2)$\\
+
+2b) The algorithm will return 0 coins when there is no possible way to make a profit. If the elements of the array are all the same value or consistantly decreasing the algorithm will return 0 coins. Also, if the array has only 0 or 1 elements the algorithm will return zero coins.\\
+
+2c) The running time complexity to create array $M$ is $\Theta(n)$ because it will traverse the original array once in order for creation.\\
+
+2d) When using array M to calculate the maximum coin return, a maximum coin return of 16 coins is found by buying at 3 coins ($A[2]$) and selling at 19 coins($A[7]$).\\
+
+2e)Rewritten algorithm pseudocode:
+\begin{lstlisting}
+makeWizardMoney(A):
+  maxCoinsSoFar = 0
+  minValSoFar = A[0]
+    for i = 0 to length(A)-1
+      if(min)
+      if(newMax)
+      
+\end{lstlisting}
+
+3a)Simple linear search algorithm pseudocode:
+\begin{lstlisting}
+simpleSearch(A, v):
+  while(int i < length(A)){
+    if(A[i] = v)
+      return i
+   }
+  return NIL
+\end{lstlisting}
+
+3b)Algorithm with loop invariant included:
+\begin{lstlisting}
+simpleSearch(A, v):
+  int loopInv = NIL
+  while(int i < length(A)){
+    if(A[i] = v)
+      loopInv = i
+   }
+  return loopInv
+\end{lstlisting}
+
+4a) The binary search algorithm is incorrect. The line saying "if $l <= r$ then return -1" should be checking for $l > r$.\\
+
+4b) Splitting the array into fourths can greatly reduce the time it takes to find an element, since the loops only have to loop through half of the amount of elements during each iteration.\\
+
+5a) The worst case running time of findCommonElement is $\Theta(n^2)$ due to the nested for loops.\\
+
+5b) The best case would be if A[0] = B[0] because the first check would end the loop. The worst case would be if there are no common elemtnes, or if the last element of A matched the last element of B.
+
+5c)\begin{lstlisting}
+Merge(A1, A2, n):
+  i = 0, j = 0, k = 0
+  while(i < n and j < n){
+    if(A1[i] < A2[j])
+      A3[k++] = A2[j++]
+  }
+  w = 0
+  while(w+ l < n){
+    if (A3[w]==A3(w+1)
+      return TRUE
+    w++
+  }
+  return FALSE
+
+\end{lstlisting} 
+
+
+
+\end{document}\grid
